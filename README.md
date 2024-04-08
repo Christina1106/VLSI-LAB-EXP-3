@@ -33,7 +33,7 @@ STEP:11  On the board, by giving required input, the LEDs starts to glow light, 
 
 Exp3_Multiplier_2bit.v
 
-\\module multiplier2by2(C,A,B); 
+module multiplier2by2(C,A,B); 
 input [1/0]A,B;
 output [3:0]C;
 wire w1,w2,w3,w4; 
