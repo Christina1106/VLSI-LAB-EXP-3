@@ -30,12 +30,9 @@ STEP:11  On the board, by giving required input, the LEDs starts to glow light, 
 
 
 **Verilog code**
-<<<< type your Verilog code here >>>>>>>
+Exp3_Multiplier_2bit.v
 
-**Output Waveform**
-
-<<< Simulation output waveform paste it here >>>>>
-
+Exp3_Multiplier_4bit.v
 
 **Result**
 
