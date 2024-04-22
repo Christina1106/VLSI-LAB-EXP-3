@@ -104,6 +104,10 @@ buf(m[6],s[12]);
 buf(m[7],c[12]);
 endmodule
 ```
+Simulation:
+
+![image](https://github.com/Nagarajan2003/VLSI-LAB-EXP-3/assets/164840481/c68c4ae2-72b6-4d3e-86c0-e8533c64f309)
+
 
 
 
