@@ -32,7 +32,7 @@ STEP:11  On the board, by giving required input, the LEDs starts to glow light, 
 **Verilog code**
 
 Exp3_Multiplier_2bit.v
-
+```
 module multiplier2by2(C,A,B); 
 input [1/0]A,B;
 output [3:0]C;
@@ -44,10 +44,21 @@ and (w3,A[1],B[1]);
 halfadder ha1(C[1],w4,w1,w2);
 halfadder ha2(C[2],C[3],w3,w4);
 endmodule
+module halfadder(sum,carry,a,b);
+input a,b;
+output sum,carry;
+xor(sum,a,b);
+and(carry,a,b);
+endmodule
+```
+
+![Screenshot 2024-04-21 215045](https://github.com/Christina1106/VLSI-LAB-EXP-3/assets/161043650/ee779276-01fb-47ef-961a-f386164ad24d)
+
+
 
 Exp3_Multiplier_4bit.v
-
-\\module arraymultiplier(m,a,b);
+```
+module arraymultiplier(m,a,b);
 input [3:0]a,b;
 output [7:0]m;
 wire [15:0]p;
@@ -72,13 +83,13 @@ half_adder ha1(s[1],c[1],p[1],p[2]);
 full_adder fa2(s[2],c[2],p[4],p[3],p[5]); 
 half_adder ha3(s[3],c[3],s[2],c[1]);
 full_adder fa4(s[4],c[4],p[6],p[7],p[8]);
-full_adder fa5(s[5],c[5],s[4],[2],[3]);
+full_adder fa5(s[5],c[5],s[4],c[2],c[3]);
 half_adder ha6(s[6],c[6],s[5],p[9]);
 full_adder fa7(s[7],c[7],p[10],p[11],p[12]);
-full_adder fa8(s[8],c[8],[5],[4], s[7]);
-half_adder ha9(s[9],c[9], s[8],c[6]);
+full_adder fa8(s[8],c[8],c[5],c[4],s[7]);
+half_adder ha9(s[9],c[9],s[8],c[6]);
 full_adder fa10(s[10],c[10],p[14],p[13],c[7]);
-full_adder fa11(s[11], [11],c[9],c[8], s[10]);
+full_adder fa11(s[11],c[11],c[9],c[8],s[10]);
 full_adder fa12(s[12],c[12],p[15],c[10],c[11]);
 buf(m[0],p[0]);
 buf(m[1],s[1]);
@@ -89,6 +100,8 @@ buf(m[5],s[11]);
 buf(m[6],s[12]);
 buf(m[7],c[12]);
 endmodule
+```
+
 
 
 **Result**
