@@ -24,6 +24,7 @@ STEP:11  On the board, by giving required input, the LEDs starts to glow light, 
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-3/assets/6987778/7713750f-65e6-41c0-8082-5005eac4031c)
 
+
 **4 Bit Multiplier**
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-3/assets/6987778/d95215dd-8cf1-4e08-93cc-96adfdd7fbdc)
@@ -51,6 +52,8 @@ xor(sum,a,b);
 and(carry,a,b);
 endmodule
 ```
+
+![Screenshot 2024-04-21 214952](https://github.com/Christina1106/VLSI-LAB-EXP-3/assets/161043650/7cc78e7b-3a8d-47c7-9a38-5ff3ce99527c)
 
 ![Screenshot 2024-04-21 215045](https://github.com/Christina1106/VLSI-LAB-EXP-3/assets/161043650/ee779276-01fb-47ef-961a-f386164ad24d)
 
