@@ -108,7 +108,7 @@ Simulation:
 
 ![image](https://github.com/Nagarajan2003/VLSI-LAB-EXP-3/assets/164840481/c68c4ae2-72b6-4d3e-86c0-e8533c64f309)
 
-
+image![image](https://github.com/Nagarajan2003/VLSI-LAB-EXP-3/assets/164840481/1c54cdc2-2b81-4848-b9a0-bfaa9aa2fa48)
 
 
 **Result**
