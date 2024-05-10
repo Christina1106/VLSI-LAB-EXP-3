@@ -19,26 +19,17 @@ STEP:9  In the Design Object List Window, enter the pin location for each pin in
 STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here.
 STEP:11  On the board, by giving required input, the LEDs starts to glow light, indicating the output.
 
-**Logic Diagram**
-2 bit Multiplier
+EXPERIMENTS :
 
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-3/assets/6987778/7713750f-65e6-41c0-8082-5005eac4031c)
+#1 MULTIPLIER_2BIT :-
 
-
-**4 Bit Multiplier**
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-3/assets/6987778/d95215dd-8cf1-4e08-93cc-96adfdd7fbdc)
-
-
-**Verilog code**
-
-Exp3_Multiplier_2bit.v
+Code:
 ```
-module multiplier2by2(C,A,B); 
-input [1/0]A,B;
+module multiplier2by2(C,A,B);
+input [1:0]A,B;
 output [3:0]C;
-wire w1,w2,w3,w4; 
-and (C[0], A[0], B[0]);
+wire w1,w2,w3,w4;
+and (C[0],A[0],B[0]);
 and (w1,A[0],B[1]);
 and (w2,A[1],B[0]);
 and (w3,A[1],B[1]);
@@ -53,19 +44,31 @@ and(carry,a,b);
 endmodule
 ```
 
-![Screenshot 2024-04-21 214952](https://github.com/Christina1106/VLSI-LAB-EXP-3/assets/161043650/7cc78e7b-3a8d-47c7-9a38-5ff3ce99527c)
+OUTPUT:-
 
-![Screenshot 2024-04-21 215045](https://github.com/Christina1106/VLSI-LAB-EXP-3/assets/161043650/ee779276-01fb-47ef-961a-f386164ad24d)
+Simulation:
+
+![image](https://github.com/Nagarajan2003/VLSI-LAB-EXP-3/assets/164840481/f5a60753-7244-4fea-968e-47e7fed01ea9)
 
 
 
-Exp3_Multiplier_4bit.v
+
+Elaborated Design:
+
+![image](https://github.com/Nagarajan2003/VLSI-LAB-EXP-3/assets/164840481/ed31268b-1cba-4a7f-b5a1-220d89bd6794)
+
+
+
+#2 MULTIPLIER_4BIT :-
+
+Code:
+
 ```
-module arraymultiplier(m,a,b);
-input [3:0]a,b;
-output [7:0]m;
-wire [15:0]p;
-wire [12:1]s,c;
+module multiplier4bit(m,a,b);
+input[3:0]a,b;
+output[7:0]m;
+wire[15:0]p;
+wire[12:1]s,c;
 and(p[0],a[0],b[0]);
 and(p[1],a[1],b[0]);
 and(p[2],a[0],b[1]);
@@ -79,11 +82,11 @@ and(p[9],a[0],b[3]);
 and(p[10],a[3],b[1]);
 and(p[11],a[2],b[2]);
 and(p[12],a[1],b[3]);
-and(p[13],a[3],b[2]);
-and(p[14],a[2],b[3]);
+and(p[13],a[3],b[2]); 
+and(p[14],a[2],b[3]); 
 and(p[15],a[3],b[3]);
 half_adder ha1(s[1],c[1],p[1],p[2]);
-full_adder fa2(s[2],c[2],p[4],p[3],p[5]); 
+full_adder fa2(s[2],c[2],p[4],p[3],p[5]);
 half_adder ha3(s[3],c[3],s[2],c[1]);
 full_adder fa4(s[4],c[4],p[6],p[7],p[8]);
 full_adder fa5(s[5],c[5],s[4],c[2],c[3]);
@@ -103,15 +106,32 @@ buf(m[5],s[11]);
 buf(m[6],s[12]);
 buf(m[7],c[12]);
 endmodule
+module half_adder(sum,carry,a,b);
+input a,b;
+output sum,carry;
+xor(sum,a,b);
+and(carry,a,b);
+endmodule
+module full_adder(sum,cout,a,b,c);
+input a,b,c;
+output sum,cout; 
+    assign sum = (a ^ b ^ c );
+    assign cout = (a & b ) | (b & c) | (a & c);
+endmodule
+
 ```
+
+
+OUTPUT:-
+
 Simulation:
 
 ![image](https://github.com/Nagarajan2003/VLSI-LAB-EXP-3/assets/164840481/c68c4ae2-72b6-4d3e-86c0-e8533c64f309)
 
+
+Elaborated Design :
+
 image![image](https://github.com/Nagarajan2003/VLSI-LAB-EXP-3/assets/164840481/1c54cdc2-2b81-4848-b9a0-bfaa9aa2fa48)
 
 
-**Result**
-
-
-
+Result : The Simulation and Synthesis Multiplier Successfully Verified using Vivado Software .
